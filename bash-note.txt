@@ -1,0 +1,30 @@
+Bash is a shell program that lets us run any program
+    using a text-based interface.
+
+some commands:
+    cd <dir>
+        change directory, can be absolute (like "/c/revature")
+        or relative (like "my-project" in the current folder)
+        ".." means, the parent of the current folder.
+    ls <dir>
+        list contents of a directory
+        (or the current directory, by default)
+    mkdir <dir>
+        create a directory
+    rm <path>
+        delete a file
+    rm -r <path>
+        delete a directory
+    mv <path1> <path2>
+        rename/move a file/directory
+    touch <name>
+        create new file
+    pwd 
+        "print working directory" display where you are right now
+    explorer 
+        opens new file explorer window
+    explorer .
+        opens new file explorer window at current directory
+    explorer <path>
+        opens new file explorer window at path specified
+    

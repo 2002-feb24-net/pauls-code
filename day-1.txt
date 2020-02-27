@@ -1,0 +1,15 @@
+VS Code
+    text editor / IDE for many languages
+    VS Code can open folders as well as files
+
+.NET Core SDK
+    helps us compile and run C#
+    
+
+C# notes
+    && and
+    || or
+    ! not
+    % modulo, gives remainder of division
+    // comment
+    
