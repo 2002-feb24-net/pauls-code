@@ -6,7 +6,30 @@ namespace abbreviation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string str = GetInput();
+            string[] stray = SplitString(str);
+            Printabbreviation();
+        }
+
+        static string GetInput()
+        {
+            System.Console.WriteLine("Enter multiple words:");
+            string str = Console.ReadLine();
+            return str:
+        }
+
+        static string[] SplitString(string str)
+        {
+            string[] stray = str.Split(' ');
+            return stray;
+        }
+
+        static void Printabbreviation(string[] stray)
+        {
+            for (int i = 0; i < length; i++)
+            {
+                System.Console.Write(stray[i][0]);
+            }
         }
     }
 }
