@@ -11,20 +11,20 @@ namespace abbreviation
             Printabbreviation(stray);
         }
 
-        static string GetInput()
+        static string GetInput()  //First method to receive user input
         {
             System.Console.WriteLine("Enter multiple words:");
             string str = Console.ReadLine();
             return str;
         }
 
-        static string[] SplitString(string str)
-        {
+        static string[] SplitString(string str)  //Splits phrase into string array 
+        {                                        //with each word in its own index
             string[] stray = str.Split(' ');
             return stray;
         }
 
-        static void Printabbreviation(string[] stray)
+        static void Printabbreviation(string[] stray)  //Prints first char of each string index
         {
             for (int i = 0; i < stray.Length; i++)
             {
