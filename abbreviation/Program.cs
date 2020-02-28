@@ -8,14 +8,14 @@ namespace abbreviation
         {
             string str = GetInput();
             string[] stray = SplitString(str);
-            Printabbreviation();
+            Printabbreviation(stray);
         }
 
         static string GetInput()
         {
             System.Console.WriteLine("Enter multiple words:");
             string str = Console.ReadLine();
-            return str:
+            return str;
         }
 
         static string[] SplitString(string str)
@@ -26,7 +26,7 @@ namespace abbreviation
 
         static void Printabbreviation(string[] stray)
         {
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < stray.Length; i++)
             {
                 System.Console.Write(stray[i][0]);
             }
