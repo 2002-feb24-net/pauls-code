@@ -12,12 +12,17 @@ namespace RockPaperScissors
 
             while (!readyToQuit)
             {
-                System.Console.Write("Do you want to play a game? ");
+                System.Console.WriteLine("SHALL WE PLAY A GAME?");
                 string input = Console.ReadLine();
 
                 if (input == "n" )
                 {
                     readyToQuit = true;
+                }
+                else if (input == "Love to. How about Global Thermonuclear War?")  //Easter egg
+                {
+                    System.Console.WriteLine("WOULDN'T YOU PREFER A GOOD GAME OF CHESS?");
+                    break;
                 }
                 else
                 {

@@ -14,77 +14,90 @@ namespace RockPaperScissors
 
         public void PlayRound()
         {
-            System.Console.Write("Round " + roundnumber + ", Enter r, p, or s: ");
+            System.Console.Write("Round " + roundnumber + ". Enter r, p, or s: ");
             string player = Console.ReadLine();
             int computer = RandNum(1, 4);
 
-            if (computer == 1)
+            if (player == "r")
             {
-                System.Console.WriteLine("computer plays Rock");
-                if(player == "r")
+                System.Console.WriteLine("You chose Rock");
+                if(computer == 1)
                 {
                     ties++;
+                    System.Console.WriteLine("Computer chose Rock");
                     System.Console.WriteLine("It's a tie.");
                     System.Console.WriteLine();
                 }
-                else if (player == "p")
-                {
-                    wins++;
-                    System.Console.WriteLine("You win!");
-                    System.Console.WriteLine();
-                }
-                else if (player == "s")
+                else if (computer == 2)
                 {
                     losses++;
+                    System.Console.WriteLine("Computer chose Paper");
                     System.Console.WriteLine("You lose!");
                     System.Console.WriteLine();
                 }
-            }
-
-            else if(computer == 2)
-            {
-                System.Console.WriteLine("computer plays Paper");
-                if(player == "r")
-                {
-                    losses++;
-                    System.Console.WriteLine("You lose!");
-                    System.Console.WriteLine();
-                }
-                else if (player == "p")
-                {
-                    ties++;
-                    System.Console.WriteLine("It's a tie.");
-                    System.Console.WriteLine();
-                }
-                else if (player == "s")
+                else if (computer == 3)
                 {
                     wins++;
+                    System.Console.WriteLine("Computer chose Scissors");
                     System.Console.WriteLine("You win!");
                     System.Console.WriteLine();
                 }
             }
 
-            else if(computer == 3)
+            else if(player == "p")
             {
-                System.Console.WriteLine("computer plays Scissors");
-                if(player == "r")
+                System.Console.WriteLine("You chose Paper");
+                if(computer == 1)
                 {
                     wins++;
+                    System.Console.WriteLine("Computer chose Rock");
                     System.Console.WriteLine("You win!");
                     System.Console.WriteLine();
                 }
-                else if (player == "p")
-                {
-                    losses++;
-                    System.Console.WriteLine("You lose!");
-                    System.Console.WriteLine();
-                }
-                else if (player == "s")
+                else if (computer == 2)
                 {
                     ties++;
+                    System.Console.WriteLine("Computer chose Paper");
                     System.Console.WriteLine("It's a tie.");
                     System.Console.WriteLine();
                 }
+                else if (computer == 3)
+                {
+                    losses++;
+                    System.Console.WriteLine("Computer chose Scissors");
+                    System.Console.WriteLine("You lose!");
+                    System.Console.WriteLine();
+                }
+            }
+
+            else if(player == "s")
+            {
+                System.Console.WriteLine("You chose Scissors");
+                if(computer == 1)
+                {
+                    losses++;
+                    System.Console.WriteLine("Computer chose Rock");
+                    System.Console.WriteLine("You lose!");
+                    System.Console.WriteLine();
+                }
+                else if (computer == 2)
+                {
+                    wins++;
+                    System.Console.WriteLine("Computer chose Paper");
+                    System.Console.WriteLine("You win!");
+                    System.Console.WriteLine();
+                }
+                else if (computer == 3)
+                {
+                    ties++;
+                    System.Console.WriteLine("Computer chose Scissors");
+                    System.Console.WriteLine("It's a tie.");
+                    System.Console.WriteLine();
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Please enter ONLY 'r', 'p', or 's' ");
             }
 
             roundnumber++;
