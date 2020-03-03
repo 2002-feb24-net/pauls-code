@@ -14,6 +14,7 @@ namespace RockPaperScissors
             {
                 System.Console.WriteLine("SHALL WE PLAY A GAME?");
                 string input = Console.ReadLine();
+                System.Console.WriteLine();
 
                 if (input == "n" )
                 {

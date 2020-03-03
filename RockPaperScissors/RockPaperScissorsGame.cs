@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace RockPaperScissors
 {
@@ -12,6 +13,8 @@ namespace RockPaperScissors
 
         int roundnumber = 1;
 
+        List<string> roundResults = new List<string>();
+        
         public void PlayRound()
         {
             System.Console.Write("Round " + roundnumber + ". Enter r, p, or s: ");
@@ -24,6 +27,7 @@ namespace RockPaperScissors
                 if(computer == 1)
                 {
                     ties++;
+                    roundResults.Add("Tie");
                     System.Console.WriteLine("Computer chose Rock");
                     System.Console.WriteLine("It's a tie.");
                     System.Console.WriteLine();
@@ -31,6 +35,7 @@ namespace RockPaperScissors
                 else if (computer == 2)
                 {
                     losses++;
+                    roundResults.Add("Loss");
                     System.Console.WriteLine("Computer chose Paper");
                     System.Console.WriteLine("You lose!");
                     System.Console.WriteLine();
@@ -38,6 +43,7 @@ namespace RockPaperScissors
                 else if (computer == 3)
                 {
                     wins++;
+                    roundResults.Add("Win");
                     System.Console.WriteLine("Computer chose Scissors");
                     System.Console.WriteLine("You win!");
                     System.Console.WriteLine();
@@ -50,6 +56,7 @@ namespace RockPaperScissors
                 if(computer == 1)
                 {
                     wins++;
+                    roundResults.Add("Win");
                     System.Console.WriteLine("Computer chose Rock");
                     System.Console.WriteLine("You win!");
                     System.Console.WriteLine();
@@ -57,6 +64,7 @@ namespace RockPaperScissors
                 else if (computer == 2)
                 {
                     ties++;
+                    roundResults.Add("Tie");
                     System.Console.WriteLine("Computer chose Paper");
                     System.Console.WriteLine("It's a tie.");
                     System.Console.WriteLine();
@@ -64,6 +72,7 @@ namespace RockPaperScissors
                 else if (computer == 3)
                 {
                     losses++;
+                    roundResults.Add("Loss");
                     System.Console.WriteLine("Computer chose Scissors");
                     System.Console.WriteLine("You lose!");
                     System.Console.WriteLine();
@@ -76,6 +85,7 @@ namespace RockPaperScissors
                 if(computer == 1)
                 {
                     losses++;
+                    roundResults.Add("Loss");
                     System.Console.WriteLine("Computer chose Rock");
                     System.Console.WriteLine("You lose!");
                     System.Console.WriteLine();
@@ -83,6 +93,7 @@ namespace RockPaperScissors
                 else if (computer == 2)
                 {
                     wins++;
+                    roundResults.Add("Win");
                     System.Console.WriteLine("Computer chose Paper");
                     System.Console.WriteLine("You win!");
                     System.Console.WriteLine();
@@ -90,6 +101,7 @@ namespace RockPaperScissors
                 else if (computer == 3)
                 {
                     ties++;
+                    roundResults.Add("Tie");
                     System.Console.WriteLine("Computer chose Scissors");
                     System.Console.WriteLine("It's a tie.");
                     System.Console.WriteLine();
@@ -98,6 +110,7 @@ namespace RockPaperScissors
             else
             {
                 System.Console.WriteLine("Please enter ONLY 'r', 'p', or 's' ");
+                roundnumber--;
             }
 
             roundnumber++;
@@ -105,9 +118,27 @@ namespace RockPaperScissors
 
         public void PrintSummary()
         {
-            System.Console.WriteLine("Wins: " + wins);
-            System.Console.WriteLine("Losses: " + losses);
-            System.Console.WriteLine("Ties: " + ties);
+            foreach (var i in roundResults)
+            {
+                System.Console.WriteLine(i);
+            }
+
+            // System.Console.WriteLine("Total Wins: " + wins);
+            // System.Console.WriteLine("Total Losses: " + losses);
+            // System.Console.WriteLine("Total Ties: " + ties);
+
+            if(wins > losses)
+            {
+                System.Console.WriteLine("You're the Winner!");
+            }
+            else if (wins == losses)
+            {
+                System.Console.WriteLine("It's a tie.");
+            }
+            else
+            {
+                System.Console.WriteLine("Suck it, Loser!");
+            }
         }
 
         int RandNum(int min, int max)   // Generate a random number between two numbers  
