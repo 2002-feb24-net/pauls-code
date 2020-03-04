@@ -120,12 +120,13 @@ namespace RockPaperScissors
         {
             foreach (var i in roundResults)
             {
-                System.Console.WriteLine(i);
+                System.Console.Write(i + " | ");
             }
 
-            // System.Console.WriteLine("Total Wins: " + wins);
-            // System.Console.WriteLine("Total Losses: " + losses);
-            // System.Console.WriteLine("Total Ties: " + ties);
+            System.Console.WriteLine();
+            System.Console.WriteLine("Total Wins: " + wins);
+            System.Console.WriteLine("Total Losses: " + losses);
+            System.Console.WriteLine("Total Ties: " + ties);
 
             if(wins > losses)
             {
