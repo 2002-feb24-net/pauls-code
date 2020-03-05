@@ -7,34 +7,26 @@ namespace Matrices
     class TheMatrix
     {
         //fields
-        //how will we store the data of this matrix
-
-        // List<int>[,] matrix1 = new List<int>[2,2];  
+        //how will we store the data of this matrix 
         
         List<List<int>> matrix = new List<List<int>>(); // list matrix
 
         List<int> row1 = new List<int>();
         List<int> row2 = new List<int>();    
-        // matrix2[0] = new List<int>[2];
-        // matrix2[1] = new List<int>[2];
-
-        // List<int>[][] matrix3 = new List<int>[2][];
-        // matrix3[0] = new List<int>[2];
-        // matrix3[1] = new List<int>[2];
         
         //methods
         //1. some way to fill in the data
         //2. some commone matrix operations
         // (matrix addition, matrix negation, multiplication, transpose)
 
-        public List<List<int>> EnterTheMatrix(int a, int b, int c, int d)
+        public List<List<int>> MatrixLoaded(int[] array)
         {
-            row1.Add(a);
-            row1.Add(b);
+            row1.Add(array[0]);
+            row1.Add(array[1]);
             matrix.Add(row1);
 
-            row2.Add(c);
-            row2.Add(d);
+            row2.Add(array[2]);
+            row2.Add(array[3]);
             matrix.Add(row2);
 
             return matrix;

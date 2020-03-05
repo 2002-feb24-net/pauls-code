@@ -31,7 +31,6 @@ namespace BubbleSort
         
         public static void Print(List<int> L)
         {
-            
             for (int i = 0; i < L.Count; i++)
             {
                 System.Console.Write(L[i] + " ");

@@ -5,36 +5,24 @@ namespace Matrices
 {
     class Program
     {
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             TheMatrix Matrix1 = new TheMatrix();
             TheMatrix Matrix2 = new TheMatrix();
 
             string num = "first";
-            System.Console.WriteLine("Enter 4 numbers into " + num + " matrix");
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            int c = int.Parse(Console.ReadLine());
-            int d = int.Parse(Console.ReadLine());
-            List<List<int>> matrix1 = Matrix1.EnterTheMatrix(a,b,c,d);
 
-            System.Console.WriteLine("Choose your pill:");
-            System.Console.WriteLine("1. Redpill (addition)");
-            System.Console.WriteLine("2. Bluepill (negation)");
-            System.Console.WriteLine("3. Yellowpill (multiplication)");
-            System.Console.WriteLine("4. Greenpill (transpose)");
-            System.Console.WriteLine("Make your choice. 1, 2, 3, or 4?");
-            string choice = Console.ReadLine();
+            int[] array1 = EnterTheMatrix(num);
+            List<List<int>> matrix1 = Matrix1.MatrixLoaded(array1);
+            EscapeTheMatrix(matrix1);
+            string choice = MakeYourChoice();
 
             if (choice == "1")
             {
                 num = "second";
-                System.Console.WriteLine("Enter 4 numbers into " + num + " matrix");
-                a = int.Parse(Console.ReadLine());
-                b = int.Parse(Console.ReadLine());
-                c = int.Parse(Console.ReadLine());
-                d = int.Parse(Console.ReadLine());
-                List<List<int>> matrix2 = Matrix2.EnterTheMatrix(a,b,c,d);
+                int[] array2 = EnterTheMatrix(num);
+                List<List<int>> matrix2 = Matrix2.MatrixLoaded(array2);
                 Matrix1.MatrixAdd(matrix2);
             }
             else if (choice == "2")
@@ -44,12 +32,8 @@ namespace Matrices
             else if (choice == "3")
             {
                 num = "second";
-                System.Console.WriteLine("Enter 4 numbers into " + num + " matrix");
-                a = int.Parse(Console.ReadLine());
-                b = int.Parse(Console.ReadLine());
-                c = int.Parse(Console.ReadLine());
-                d = int.Parse(Console.ReadLine());
-                List<List<int>> matrix2 = Matrix2.EnterTheMatrix(a,b,c,d);
+                int[] array2 = EnterTheMatrix(num);
+                List<List<int>> matrix2 = Matrix2.MatrixLoaded(array2);
                 Matrix1.AgentSmith(matrix2);
             }
             else if (choice == "4")
@@ -65,25 +49,36 @@ namespace Matrices
             EscapeTheMatrix(matrix1);
         }
 
-        // public static List<List<int>> EnterTheMatrix()
-        // {
-        //     System.Console.WriteLine("Enter 4 numbers into " + num + " matrix");
-        //     a = int.Parse(Console.ReadLine());
-        //     b = int.Parse(Console.ReadLine());
-        //     c = int.Parse(Console.ReadLine());
-        //     d = int.Parse(Console.ReadLine());
-        //     List<List<int>> matrix = Matrix1.MatrixLoaded(a,b,c,d);
-        //     return matrix;
-        // }
-
-        public static void EscapeTheMatrix(List<List<int>> matrix)
+        public static int[] EnterTheMatrix(string num)
         {
-            for (int i = 0; i < matrix.Count; i++)
+            System.Console.WriteLine("Select 4 numbers to enter your " + num + " array");
+            int[] array = new int[4];
+            array[0] = int.Parse(Console.ReadLine());
+            array[1] = int.Parse(Console.ReadLine());
+            array[2] = int.Parse(Console.ReadLine());
+            array[3] = int.Parse(Console.ReadLine());
+            return array;
+        }
+
+        public static string MakeYourChoice()
+        {
+            System.Console.WriteLine("Choose your pill:");
+            System.Console.WriteLine("1. Redpill (addition)");
+            System.Console.WriteLine("2. Bluepill (negation)");
+            System.Console.WriteLine("3. Yellowpill (multiplication)");
+            System.Console.WriteLine("4. Greenpill (transpose)");
+            System.Console.WriteLine("Make your choice. 1, 2, 3, or 4?");
+            string choice = Console.ReadLine();
+            return choice;
+        }
+        public static void EscapeTheMatrix(List<List<int>> array)
+        {
+            for (int i = 0; i < array.Count; i++)
             {
                 System.Console.Write("| ");
-                for (int j = 0; j < matrix[i].Count; j++)
+                for (int j = 0; j < array[i].Count; j++)
                 {
-                    System.Console.Write(matrix[i][j] + " ");
+                    System.Console.Write(array[i][j] + " ");
                 }
                 System.Console.WriteLine("|");
             }
