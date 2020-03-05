@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BubbleSort
 {
@@ -6,7 +7,34 @@ namespace BubbleSort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<int> list = new List<int> {3,4,78,1,9,3,1,7,2,2};
+            Sort(list);
+            Print(list);
+        }
+
+        public static List<int> Sort(List<int> L)
+        {
+            for (int i = L.Count - 2; i >= 0; i--)
+            {
+                if (L[i] > L[i + 1])
+                {
+                    int a = L[i];
+                    L[i] = L[i+1];
+                    L[i+1] = a;
+                    i = L.Count - 1;
+                }
+            }
+
+            return L;
+        }
+        
+        public static void Print(List<int> L)
+        {
+            
+            for (int i = 0; i < L.Count; i++)
+            {
+                System.Console.Write(L[i] + " ");
+            }
         }
     }
 }
