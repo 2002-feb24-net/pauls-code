@@ -7,7 +7,7 @@ namespace BubbleSort
     {
         static void Main(string[] args)
         {
-            List<int> list = new List<int> {3,4,78,1,9,3,1,7,2,2};
+            List<int> list = new List<int> {3,2,1,4,6,8,9};
             Sort(list);
             Print(list);
         }
@@ -21,6 +21,7 @@ namespace BubbleSort
                     int a = L[i];
                     L[i] = L[i+1];
                     L[i+1] = a;
+                    
                     i = L.Count - 1;
                 }
             }

@@ -51,6 +51,39 @@ namespace Matrices
             }
             return matrix;
         }
+
+        public List<List<int>> NegativeZone()
+        {
+            for (int i = 0; i < matrix.Count; i++)
+            {
+                for (int j = 0; j < matrix[i].Count; j++)
+                {
+                    matrix[i][j] = matrix[i][j] * -1;
+                }
+            }
+            return matrix;
+        }
+
+        public List<List<int>> AgentSmith(List<List<int>> matrix2)
+        {
+            for (int i = 0; i < matrix.Count; i++)
+            {
+                for (int j = 0; j < matrix[i].Count; j++)
+                {
+                    matrix[i][j] = matrix[i][j] * matrix2[i][j];
+                }
+            }
+            return matrix;
+        }
+
+        public List<List<int>> DodgeThis()
+        {
+            int a;
+            a = matrix[0][1];
+            matrix[0][1] = matrix[1][0];
+            matrix[1][0] = a;
+            return matrix;
+        }
         
     }
 
