@@ -29,6 +29,9 @@ namespace PersonList
             var sortedPeople = InsertionSort(people);
             // sortedPeople.Sort();
 
+            Print(Duplicates(ages));
+            Print(Duplicates(sortedPeople));
+
             Print(sortedPeople);
 
         }
@@ -54,7 +57,7 @@ namespace PersonList
                     if (String.Compare(people[i], sortedPeople[j]) < 0)
                     {
                         sortedPeople.Insert(j, people[i]);
-                        // break;
+                        continue;
                     }
                 }   
                 
