@@ -1,0 +1,25 @@
+body {
+    background-color: navajowhite; /* Changes the background color of the whole page */
+}
+
+h1 {
+  color: #ff0000;
+}
+
+h2 {
+    font-family: 'Comic Sans MS';
+    margin-left: 20px;
+}
+
+div p {
+    width: 300px;
+    border: 15px solid blue;
+    padding: 20px;
+    margin: 10px;
+    font-variant: small-caps;
+}
+
+ol {
+    position: relative;
+    left: 30px;
+}
